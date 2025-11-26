@@ -37,9 +37,8 @@ Através do PowerQuery no PowerBI foi realizado a transformação dos dados.
     Coluna "Salário" na tabela employee foi modificada para "Decimal fixo";
 
     Verificação de nulos
-        Analisados os campos com valores nulos.
-        O campo Super_ssn possui valores nulos para colaboradores que são gerentes (ex.: James).
-
+        Analisados os campos com valores nulos, retirados os que achei desnecessário;
+        
     Departamentos sem gerente
         Foi verificado que todos os departamentos possuem gerente, portanto nenhuma lacuna foi encontrada.
 
@@ -56,19 +55,13 @@ Através do PowerQuery no PowerBI foi realizado a transformação dos dados.
 
         Mescla das colunas "Fname", "Minit", "Lname", criando uma nova tabela que renomeei como Nome Completo;
         
-        
-        
+      Para facilitar visualização, Utilizei a ferramenta "Mesclar Consultas como Novas" criei novas tabelas:
 
-    Junção com nomes dos gerentes
-        Utilizando a tabela employee_department, foi possível associar cada colaborador ao nome completo do gerente.
-        Observação: o nome completo incluiu o Minit entre nome e sobrenome.
+      Tabela Departamento: Mescla das tabelas department e dept_locations;
+      Tabela Funcionários_com_dependentes: Mescla das tabelas employee e dependent.
+      Tabela Projeto_departamento: Mescla das tabelas project e department.       
 
-    Mescla de colunas Nome e Sobrenome
-        Criada a coluna Full Name unindo Fname, Minit e Lname.
-
-    Mescla de departamentos e localização
-        Criada tabela dep_location com combinação única de Department e Location.
-        Query SQL utilizada no Power BI:
+    
 
 
 Tecnologias Utilizadas
