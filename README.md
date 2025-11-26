@@ -13,6 +13,8 @@ Não consegui criar uma instância no Azure, devido ao seguinte erro:
 
 <img width="1604" height="774" alt="image" src="https://github.com/user-attachments/assets/dd4bffea-73d9-459c-977c-0853ad1bb723" />
 
+        Com auxilio de IA tentei fazer a correção do erro mudando a localização conforme solicitado, 
+        testei vários como por exemplo "Brazil South", "Brazil Southeast", etc., porém sem sucesso na criação da instância.
         Para dar andamento ao projeto criei a Base de Dados diretamente no mySQL.
 
 2. Criação do banco de dados
@@ -45,16 +47,17 @@ Através do PowerQuery no PowerBI foi realizado a transformação dos dados.
         A coluna Hours da tabela works_on já estava em formato decimal. Mantida como está.
 
     Separação de colunas complexas
-        A coluna Address da tabela employee foi separada em:
-            Number (número do endereço)
-            Street (rua)
-            City (cidade)
-            UF (estado)
-        Ajustes realizados para cidades com nomes compostos (ex.: Oak Humble) e correção de UF.
+        A coluna Address da tabela employee renomeada como Endereço foi separada em:
+            Rua;
+            Número;
+            Cidade;
+            UF.
+        Ajustes realizados para cidades com nomes compostos (ex.: Oak Humble) e correção de UF;
 
-    Mescla de consultas employee e departament
-        Criada a tabela employee_department no Power BI, relacionando colaboradores ao nome do departamento.
-        Tipo de junção utilizada: Externa esquerda (Left Join).
+        Mescla das colunas "Fname", "Minit", "Lname", criando uma nova tabela que renomeei como Nome Completo;
+        
+        
+        
 
     Junção com nomes dos gerentes
         Utilizando a tabela employee_department, foi possível associar cada colaborador ao nome completo do gerente.
@@ -67,18 +70,11 @@ Através do PowerQuery no PowerBI foi realizado a transformação dos dados.
         Criada tabela dep_location com combinação única de Department e Location.
         Query SQL utilizada no Power BI:
 
-SELECT 
-    d.Dname,
-    l.Dlocation,
-    CONCAT(d.Dname, ' - ', l.Dlocation) AS Department_Location
-FROM dept_locations l
-JOIN departament d
-    ON l.Dnumber = d.Dnumber;
 
 Tecnologias Utilizadas
 
     Azure Database for MySQL – Hospedagem do banco de dados na nuvem.
-    MySQL – Sistema de gerenciamento do banco de dados relacional.
+    Copilot - Correção de problemas na criação de instância.
+    MySQL – Criação, manipulação e gerenciamento do banco de dados relacional.
     Power BI – Conexão com o banco e transformação/análise de dados.
-    SQL – Criação de consultas para extração e manipulação dos dados.
     ETL (Extract, Transform, Load) – Processos de limpeza, transformação e modelagem de dados no Power BI.
