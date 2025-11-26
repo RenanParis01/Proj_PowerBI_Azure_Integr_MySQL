@@ -1,40 +1,38 @@
-# Proj_PowerBI_Azure_Integr_MySQL
-Projeto: Integração Azure MySQL com Power BI
-Descrição do Projeto
+## Projeto: Integração Azure MySQL com Power BI
+
+*Descrição do Projeto
 
 Este projeto teve como objetivo a integração de uma instância MySQL hospedada no Azure com o Power BI, além da transformação e análise de dados de uma base de dados de exemplo disponível no GitHub.
 
 O desafio envolveu criação de banco, conexão com Power BI e aplicação de boas práticas de ETL para transformar a base em um formato adequado para análises.
 Etapas do Projeto
+
 1. Criação da instância no Azure
 
-Foi criada uma instância MySQL no Azure para hospedar o banco de dados.
+Não consegui criar uma instância no Azure, devido ao seguinte erro:
 
-Servidor Azure
+<img width="1604" height="774" alt="image" src="https://github.com/user-attachments/assets/dd4bffea-73d9-459c-977c-0853ad1bb723" />
+
+        Para dar andamento ao projeto criei a Base de Dados diretamente no mySQL.
+
 2. Criação do banco de dados
 
-O banco foi criado com base nos dados disponíveis no repositório do GitHub, contendo tabelas como:
+A base de dados foi criada com base nos dados disponíveis no repositório do GitHub da professora Juliana, contendo tabelas como:
 
-    employee
-    departament
-    dept_locations
-    project
-    works_on
-    dependent
+<img width="477" height="161" alt="mysql image" src="https://github.com/user-attachments/assets/20c4b10c-e8ba-4c55-825c-2e8e09582f9a" />
 
-3. Integração do Power BI com MySQL no Azure
 
-Foi realizada a conexão do Power BI à instância MySQL no Azure.
-Problemas de SSL foram resolvidos utilizando o certificado DigiCertGlobalRootCA.crt.pem e habilitando a opção de conexão SSL.
+3. Integração do Power BI com MySQL.
+
+Foi realizada a conexão do Power BI a base de dados do mySQL.
+
 4. Transformação de dados
 
-As transformações aplicadas incluíram:
+Através do PowerQuery no PowerBI foi realizado a transformação dos dados.
 
-    Verificação dos cabeçalhos e tipos de dados
-        Todos os campos foram revisados e ajustados para o tipo correto.
-
-    Valores monetários
-        A coluna Salary da tabela employee foi convertida para Decimal fixo (tipo double preciso).
+    1 - Modificado cabeçalhos e excluído colunas;
+    
+    Coluna "Salário" na tabela employee foi modificada para "Decimal fixo";
 
     Verificação de nulos
         Analisados os campos com valores nulos.
