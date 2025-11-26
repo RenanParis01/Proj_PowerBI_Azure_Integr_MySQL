@@ -1,4 +1,4 @@
-## Projeto: Integração Azure MySQL com Power BI
+## Projeto DIO: Integração Azure MySQL com Power BI
 
 *Descrição do Projeto
 
